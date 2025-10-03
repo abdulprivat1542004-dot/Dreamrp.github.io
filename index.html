@@ -6,72 +6,129 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body {
-      background: linear-gradient(135deg, #f7e600, #ffe066);
-      font-family: Arial, sans-serif;
-      color: white;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #fdf6d3;
+      color: #333;
     }
     header {
-      text-align: center;
-      padding: 30px 20px;
-    }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 4px #000000;
-    }
-    table {
-      width: 80%;
-      margin: 0 auto;
-      border-collapse: collapse;
-      background-color: rgba(255, 255, 255, 0.1);
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-    th, td {
-      padding: 15px;
-      text-align: left;
-      border-bottom: 1px solid white;
-    }
-    td a {
+      background: #f7c600;
       color: white;
-      text-decoration: none;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 2.5em;
       font-weight: bold;
+      text-shadow: 2px 2px 4px #000;
     }
-    td a:hover {
-      text-decoration: underline;
+    .accordion {
+      width: 90%;
+      margin: 20px auto;
+    }
+    .accordion-item {
+      background: white;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .accordion-header {
+      padding: 15px;
+      cursor: pointer;
+      font-weight: bold;
+      background: #f7c600;
+      color: white;
+      border-radius: 8px 8px 0 0;
+    }
+    .accordion-content {
+      padding: 15px;
+      display: none;
+      background: #fff8dc;
+      border-radius: 0 0 8px 8px;
     }
     footer {
       text-align: center;
       padding: 20px;
-      font-size: 0.9em;
+      background: #f7c600;
       color: white;
-      text-shadow: 1px 1px 2px #000000;
+      font-weight: bold;
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const headers = document.querySelectorAll(".accordion-header");
+      headers.forEach(header => {
+        header.addEventListener("click", () => {
+          const content = header.nextElementSibling;
+          content.style.display = content.style.display === "block" ? "none" : "block";
+        });
+      });
+    });
+  </script>
 </head>
 <body>
-  <header>
-    <h1>Dream-RP Regelwerk</h1>
-    <p>Alle Regelbereiche auf einen Blick</p>
-  </header>
+  <header>REGELWERK</header>
 
-  <main>
-    <table>
-      <tr><td><a href="allgemein.html">§1 Allgemeine Regeln</a></td></tr>
-      <tr><td><a href="roleplay.html">§2 Roleplay Regeln</a></td></tr>
-      <tr><td><a href="routen.html">§3 Routenregeln</a></td></tr>
-      <tr><td><a href="raub.html">§4 Raub & Entführung</a></td></tr>
-      <tr><td><a href="geiselnahme.html">§5 Geiselnahme</a></td></tr>
-      <tr><td><a href="bewusstlos.html">§6 Bewusstlosigkeit & Newlife</a></td></tr>
-      <tr><td><a href="support.html">§7 Supportregeln</a></td></tr>
-      <tr><td><a href="sonstiges.html">§8 Sonstiges</a></td></tr>
-      <tr><td><a href="highteam.html">HighTeam Übersicht</a></td></tr>
-    </table>
-  </main>
+  <div class="accordion">
+    <div class="accordion-item">
+      <div class="accordion-header">§1 Allgemeine Regeln</div>
+      <div class="accordion-content">
+        <a href="allgemein.html">Zur Seite</a>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">§2 Roleplay</div>
+      <div class="accordion-content">
+        <a href="roleplay.html">Zur Seite</a>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">§3 Routen</div>
+      <div class="accordion-content">
+        <a href="routen.html">Zur Seite</a>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">§4 Raub / Entführung</div>
+      <div class="accordion-content">
+        <a href="raub.html">Zur Seite</a>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">§5 Geiselnahme</div>
+      <div class="accordion-content">
+        <a href="geiselnahme.html">Zur Seite</a>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">§6 Bewusstlosigkeit & Newlife</div>
+      <div class="accordion-content">
+        <a href="bewusstlos.html">Zur Seite</a>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">§7 Support</div>
+      <div class="accordion-content">
+        <a href="support.html">Zur Seite</a>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">§8 Sonstiges</div>
+      <div class="accordion-content">
+        <a href="sonstiges.html">Zur Seite</a>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">HighTeam Übersicht</div>
+      <div class="accordion-content">
+        <a href="highteam.html">Zur Seite</a>
+      </div>
+    </div>
+  </div>
 
   <footer>
-    &copy; 2025 Dream-RP | Regelwerk
+    <a href="index.html" style="color:white;">Startseite</a> |
+    <a href="regelwerk.html" style="color:white;">Regelwerk</a> |
+    <a href="routen.html" style="color:white;">Fraktionsregeln</a> |
+    <a href="support.html" style="color:white;">Regelbruch melden</a>
   </footer>
 </body>
 </html>
