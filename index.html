@@ -2,107 +2,123 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Dream Roleplay Regelwerk</title>
+  <title>Dream-RP Regelwerk</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f7c600, #ffe066);
+      background-image: url('https://copilot.microsoft.com/th/id/BCO.9b4acd35-287b-4d88-b821-16dbe3cb3f72.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       color: white;
     }
-    header {
-      background: #f7c600;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.8em;
-      font-weight: bold;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
-    }
-    .accordion {
-      width: 90%;
-      margin: 20px auto;
-    }
-    .accordion-item {
-      background: rgba(255,255,255,0.1);
-      border-radius: 8px;
-      margin-bottom: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-    .accordion-header {
+
+    nav {
+      background: rgba(0, 0, 0, 0.7);
       padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .dark-mode nav {
+      background: rgba(30, 30, 30, 0.9);
+    }
+
+    .dark-toggle {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+
+    .dark-toggle button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      background: #333;
+      color: white;
+      font-weight: bold;
       cursor: pointer;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    header h1 {
+      font-size: 3em;
       font-weight: bold;
-      background: #f7c600;
       color: white;
-      border-radius: 8px 8px 0 0;
     }
-    .accordion-content {
-      padding: 15px;
-      display: none;
-      background: #fff8dc;
-      color: black;
-      border-radius: 0 0 8px 8px;
+
+    header h1 span:nth-child(2) {
+      color: #f7c600;
     }
+
     .search-box {
       text-align: center;
       margin: 20px;
     }
+
     .search-box input {
       padding: 10px;
       width: 80%;
       border-radius: 8px;
       border: none;
+      font-size: 1em;
     }
+
+    .accordion {
+      width: 90%;
+      margin: 0 auto 40px;
+    }
+
     .dark-mode {
       background: #121212;
       color: white;
     }
-    .dark-mode .accordion-header {
+
+    .dark-mode .search-box input {
       background: #333;
-    }
-    .dark-mode .accordion-content {
-      background: #1e1e1e;
       color: white;
-    }
-    .dark-mode footer {
-      background: #333;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f7c600;
-      color: white;
-      font-weight: bold;
-    }
-    .discord-button {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: white;
-      color: #f7c600;
-      font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <div style="text-align:right; padding:10px;">
-    <button onclick="toggleDarkMode()" style="padding:8px 16px; border:none; border-radius:6px; background:#333; color:white;">Dark Mode</button>
+  <div class="dark-toggle">
+    <button onclick="toggleDarkMode()">Dark Mode</button>
   </div>
 
+  <nav>
+    <a href="index.html">Startseite</a>
+    <a href="regelwerk.html">Regelwerk</a>
+    <a href="frakregelwerk.html">Frakregelwerk</a>
+    <a href="highteam.html">HighTeam</a>
+  </nav>
+
   <header>
-    <h1>Dream Roleplay Regelwerk</h1>
+    <h1><span>REGEL</span><span>WERK</span></h1>
   </header>
 
   <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Regel suchen...">
+    <input type="text" id="searchInput" placeholder="Regel suchen…">
   </div>
 
   <div class="accordion">
+
+
 <!-- §1 Allgemeine Regeln -->
 <div class="accordion-item">
   <div class="accordion-header">§1 Allgemeine Regeln</div>
@@ -275,23 +291,7 @@
     Maximal eine weitere Familie darf auf einer Route arbeiten. Zivilisten dürfen unbegrenzt auf einer Route arbeiten.</p>
   </div>
 </div>
-<!-- §4 Raub / Entführung -->
-<div class="accordion-item">
-  <div class="accordion-header">§4 Raub / Entführung</div>
-  <div class="accordion-content">
-    <p><strong>§4.1 – Ausrauben ohne RP-Hintergrund</strong><br>
-    Das Ausrauben von Spielern ohne RP-Hintergrund ist verboten. Es dürfen maximal 20.000 € oder Kasinochips abgezogen werden.</p>
 
-    <p><strong>§4.2 – Staatsbeamte</strong><br>
-    Es dürfen nur illegale Substanzen von Staatsbeamten entwendet werden – und nur, wenn sie Aggressor sind.</p>
-
-    <p><strong>§4.3 – Interaktive Jobs & legale Routen</strong><br>
-    Spieler mit interaktivem Job oder auf legalen Routen dürfen nicht ausgeraubt werden. Ausnahme: Meth kochen.</p>
-
-    <p><strong>§4.4 – Raub durchziehen</strong><br>
-    Ein gestarteter Raub muss durchgeführt werden. Auch ohne Geiseln muss verhandelt werden. Direktes Erschießen ist RDM.</p>
-  </div>
-</div>
 <!-- §4 Raub / Entführung -->
 <div class="accordion-item">
   <div class="accordion-header">§4 Raub / Entführung</div>
