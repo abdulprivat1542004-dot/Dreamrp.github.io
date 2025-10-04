@@ -3,153 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <title>Dream-RP Regelwerk</title>
- <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-image: url(https://images.cgames.de/images/gamestar/4/gta-5-grafik-mod-icenhancer-_2631839.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: white;
-  }
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
 
-  nav {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
 
-  nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
-  }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* dunkelt das Video leicht ab */
+      z-index: 0;
+    }
 
-  .dark-mode nav {
-    background: rgba(30, 30, 30, 0.9);
-  }
+    nav {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-  .dark-toggle {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-  }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
 
-  .dark-toggle button {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 6px;
-    background: #333;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-  }
+    .dark-mode nav {
+      background: rgba(30, 30, 30, 0.9);
+    }
 
-  header {
-    text-align: center;
-    padding: 40px 20px 20px;
-  }
+    .dark-toggle {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
 
-  header h1 {
-    font-size: 3em;
-    font-weight: bold;
-    color: white;
-  }
+    .dark-toggle button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      background: #333;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-  header h1 span:nth-child(2) {
-    color: #f7c600;
-  }
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
 
-  .search-box {
-    text-align: center;
-    margin: 20px;
-  }
+    header h1 {
+      font-size: 3em;
+      font-weight: bold;
+      color: white;
+    }
 
-  .search-box input {
-    padding: 10px;
-    width: 80%;
-    border-radius: 8px;
-    border: none;
-    font-size: 1em;
-  }
+    header h1 span:nth-child(2) {
+      color: #f7c600;
+    }
 
-  .accordion {
-    width: 90%;
-    margin: 0 auto 40px;
-  }
+    .search-box {
+      text-align: center;
+      margin: 20px;
+    }
 
-  .dark-mode {
-    background: #121212;
-    color: white;
-  }
+    .search-box input {
+      padding: 10px;
+      width: 80%;
+      border-radius: 8px;
+      border: none;
+      font-size: 1em;
+    }
 
-  .dark-mode .search-box input {
-    background: #333;
-    color: white;
-  }
+    .accordion {
+      width: 90%;
+      margin: 0 auto 40px;
+    }
 
-  /* ✅ NEU: Lesbare Regelboxen */
-  .accordion-item {
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 12px;
-    margin-bottom: 20px;
-    padding: 20px;
-    color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  }
+    .dark-mode {
+      background: #121212;
+      color: white;
+    }
 
-  .accordion-header {
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 12px;
-    border-radius: 8px;
-    letter-spacing: 1px;
-  }
-
-  .accordion-content p {
-    font-size: 1em;
-    line-height: 1.6;
-    margin-bottom: 12px;
-  }
-
-  .accordion-content strong {
-    color: #f7c600;
-  }
-</style>
-
+    .dark-mode .search-box input {
+      background: #333;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-  <div class="dark-toggle">
-    <button onclick="toggleDarkMode()">Dark Mode</button>
-  </div>
 
-<nav>
-  <a href="index.html">Startseite</a>
-  <a href="regelwerk.html">Regelwerk</a>
-  <a href="Fraktions-regeln.html">Fraktionsregeln</a>
-  <a href="highteam.html">HighTeam</a>
-</nav>
+  <!-- 🔴 Video-Hintergrund -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="intro.mp4" type="video/mp4">
+    Dein Browser unterstützt kein HTML5-Video.
+  </video>
 
-
+  <!-- 🔵 Restlicher Inhalt -->
+  <nav>
+    <a href="regelwerk.html">Regelwerk</a>
+    <a href="Fraktions-regeln.html">Fraktionsregeln</a>
+    <a href="highteam.html">HighTeam</a>
+  </nav>
 
   <header>
-    <h1><span>Dream</span><span>RP</span></h1>
+    <h1><span>Willkommen bei</span> <span>Dream-RP</span></h1>
+    <p>Dein realistisches Roleplay-Erlebnis</p>
   </header>
 
   <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Regel suchen…">
+    <input type="text" placeholder="Regel suchen...">
   </div>
 
-  <div class="accordion">
+  <!-- Weitere Inhalte folgen hier -->
 
-
+</body>
+</html>
