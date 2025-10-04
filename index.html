@@ -8,16 +8,8 @@
       margin: 0;
       font-family: Arial, sans-serif;
       color: white;
-    }
-
-    #bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -1;
-      object-fit: cover;
+      background: url('https://copilot.microsoft.com/th/id/BCO.cbdfd84f-6853-4b80-a320-3da319554b66.png') no-repeat center center fixed;
+      background-size: cover;
     }
 
     body::before {
@@ -27,7 +19,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.4); /* dunkelt das Video leicht ab */
+      background: rgba(0, 0, 0, 0.4); /* dunkelt das Bild leicht ab */
       z-index: 0;
     }
 
@@ -114,12 +106,6 @@
   </style>
 </head>
 <body>
-
-  <!-- 🔴 Video-Hintergrund -->
-  <video autoplay muted loop playsinline id="bg-video">
-    <source src="intro.mp4" type="video/mp4">
-    Dein Browser unterstützt kein HTML5-Video.
-  </video>
 
   <!-- 🔵 Restlicher Inhalt -->
   <nav>
