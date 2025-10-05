@@ -1,0 +1,151 @@
+!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Dream-RP Regelwerk</title>
+ <style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(https://images.cgames.de/images/gamestar/4/gta-5-grafik-mod-icenhancer-_2631839.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+  }
+
+  nav {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+
+  .dark-mode nav {
+    background: rgba(30, 30, 30, 0.9);
+  }
+
+  .dark-toggle {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+
+  .dark-toggle button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #333;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  header {
+    text-align: center;
+    padding: 40px 20px 20px;
+  }
+
+  header h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+  }
+
+  header h1 span:nth-child(2) {
+    color: #f7c600;
+  }
+
+  .search-box {
+    text-align: center;
+    margin: 20px;
+  }
+
+  .search-box input {
+    padding: 10px;
+    width: 80%;
+    border-radius: 8px;
+    border: none;
+    font-size: 1em;
+  }
+
+  .accordion {
+    width: 90%;
+    margin: 0 auto 40px;
+  }
+
+  .dark-mode {
+    background: #121212;
+    color: white;
+  }
+
+  .dark-mode .search-box input {
+    background: #333;
+    color: white;
+  }
+
+  /* ✅ NEU: Lesbare Regelboxen */
+  .accordion-item {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
+  .accordion-header {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+  }
+
+  .accordion-content p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .accordion-content strong {
+    color: #f7c600;
+  }
+</style>
+
+</head>
+<body>
+  <div class="dark-toggle">
+    <button onclick="toggleDarkMode()">Dark Mode</button>
+  </div>
+
+<nav>
+  <a href="index.html">Startseite</a>
+  <a href="regelwerk.html">Regelwerk</a>
+  <a href="Fraktions-regeln.html">Fraktionsregeln</a>
+  <a href="highteam.html">HighTeam</a>
+</nav>
+
+  <header>
+    <h1><span>REGEL</span><span>WERK</span></h1>
+  </header>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Regel suchen…">
+  </div>
+
+  <div class="accordion">
