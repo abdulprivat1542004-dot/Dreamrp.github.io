@@ -7,8 +7,8 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      color: white;
-      background: url(https://copilot.microsoft.com/th/id/BCO.5d751174-b62e-4091-8660-a62d44b486f7.png) no-repeat center center fixed;
+      color: black;
+      background: url('https://copilot.microsoft.com/attachments/3Ymzo8pajhPT3MgNgJ7o5.jpeg') no-repeat center center fixed;
       background-size: cover;
     }
 
@@ -19,12 +19,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.4); /* dunkelt das Bild leicht ab */
+      background: rgba(255, 255, 255, 0.1);
       z-index: 0;
     }
 
     nav {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(255, 255, 255, 0.3);
       padding: 15px;
       display: flex;
       justify-content: center;
@@ -35,79 +35,58 @@
     }
 
     nav a {
-      color: white;
+      color: black;
       text-decoration: none;
       font-weight: bold;
       font-size: 1.1em;
-    }
-
-    .dark-mode nav {
-      background: rgba(30, 30, 30, 0.9);
-    }
-
-    .dark-toggle {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-    }
-
-    .dark-toggle button {
-      padding: 8px 16px;
-      border: none;
-      border-radius: 6px;
-      background: #333;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
+      text-shadow: 1px 1px 2px rgba(255, 255, 0, 0.6);
     }
 
     header {
       text-align: center;
-      padding: 40px 20px 20px;
+      padding: 60px 20px 20px;
+      position: relative;
+      z-index: 1;
     }
 
     header h1 {
       font-size: 3em;
       font-weight: bold;
-      color: white;
+      color: black;
+      text-shadow: 2px 2px 5px rgba(255, 255, 0, 0.6);
     }
 
-    header h1 span:nth-child(2) {
-      color: #f7c600;
+    header p {
+      font-size: 1.2em;
+      font-weight: normal;
+      color: black;
+      text-shadow: 1px 1px 3px rgba(255, 255, 0, 0.4);
     }
 
-    .search-box {
+    .projektinhaber {
       text-align: center;
-      margin: 20px;
+      margin-top: 40px;
+      position: relative;
+      z-index: 1;
     }
 
-    .search-box input {
-      padding: 10px;
-      width: 80%;
-      border-radius: 8px;
-      border: none;
-      font-size: 1em;
+    .projektinhaber img {
+      width: 80px;
+      margin: 10px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(255, 255, 0, 0.6);
     }
 
-    .accordion {
-      width: 90%;
-      margin: 0 auto 40px;
-    }
-
-    .dark-mode {
-      background: #121212;
-      color: white;
-    }
-
-    .dark-mode .search-box input {
-      background: #333;
-      color: white;
+    .projektinhaber p {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: black;
+      text-shadow: 1px 1px 3px rgba(255, 255, 0, 0.5);
     }
   </style>
 </head>
 <body>
 
-  <!-- 🔵 Restlicher Inhalt -->
   <nav>
     <a href="regelwerk.html">Regelwerk</a>
     <a href="Fraktions-regeln.html">Fraktionsregeln</a>
@@ -115,13 +94,15 @@
   </nav>
 
   <header>
-    <h1><span>Willkommen bei</span> <span>Dream-RP</span></h1>
+    <h1>Willkommen bei <span>Dream-RP</span></h1>
     <p>Dein realistisches Roleplay-Erlebnis</p>
   </header>
 
-  
-
-  <!-- Weitere Inhalte folgen hier -->
+  <section class="projektinhaber">
+    <img src="https://copilot.microsoft.com/attachments/coN9x1h2DXv8qVFnSoChV.jpeg" alt="Logo 1">
+    <img src="https://copilot.microsoft.com/attachments/coN9x1h2DXv8qVFnSoChV.jpeg" alt="Logo 2">
+    <p>PROJEKTINHABER: KOLJA GOLDSTEIN</p>
+  </section>
 
 </body>
 </html>
