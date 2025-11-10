@@ -32,26 +32,6 @@
     font-size: 1.1em;
   }
 
-  .dark-mode nav {
-    background: rgba(30, 30, 30, 0.9);
-  }
-
-  .dark-toggle {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-  }
-
-  .dark-toggle button {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 6px;
-    background: #333;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
   header {
     text-align: center;
     padding: 40px 20px 20px;
@@ -85,17 +65,7 @@
     margin: 0 auto 40px;
   }
 
-  .dark-mode {
-    background: #121212;
-    color: white;
-  }
-
-  .dark-mode .search-box input {
-    background: #333;
-    color: white;
-  }
-
-  /* ✅ NEU: Lesbare Regelboxen */
+  /* Lesbare Regelboxen */
   .accordion-item {
     background: rgba(0, 0, 0, 0.7);
     border-radius: 12px;
@@ -114,6 +84,12 @@
     padding: 12px;
     border-radius: 8px;
     letter-spacing: 1px;
+    cursor: pointer;
+  }
+
+  .accordion-content {
+    display: none; /* Startzustand: geschlossen */
+    padding: 15px;
   }
 
   .accordion-content p {
@@ -126,11 +102,52 @@
     color: #f7c600;
   }
 </style>
-
 </head>
 <body>
-  <div class="dark-toggle">
-    <button onclick="toggleDarkMode()">Dark Mode</button>
+
+<nav>
+  <a href="index.html">Startseite</a>
+  <a href="regelwerk.html">Regelwerk</a>
+  <a href="Fraktions-regeln.html">Fraktionsregeln</a>
+  <a href="highteam.html">Bußgeldkatalog</a>
+</nav>
+
+<header>
+  <h1><span>REGEL</span><span>WERK</span></h1>
+</header>
+
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Regel suchen…">
+</div>
+
+<div class="accordion">
+  <div class="accordion-item">
+    <div class="accordion-header">§1 Allgemeine Regeln</div>
+    <div class="accordion-content">
+      <p><strong>§1.1:</strong> Beispieltext für die Regel.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">§2 Roleplay</div>
+    <div class="accordion-content">
+      <p><strong>§2.1:</strong> Beispieltext für Roleplay-Regeln.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Accordion Funktion
+  const headers = document.querySelectorAll('.accordion-header');
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      const isOpen = content.style.display === 'block';
+      content.style.display = isOpen ? 'none' : 'block';
+    });
+  });
+</script>
+
   </div>
 
 <nav>
@@ -476,8 +493,8 @@
   </div>
 </div>
 <footer>
-  <p>Startseite | Regelwerk | Fraktionsregeln | Regelbruch melden</p>
-  <a href="https://discord.gg/deinlink" target="_blank" class="discord-button">Zum Discord</a>
+  <p>Startseite | Regelwerk | Fraktionsregeln | schreibfehler melden</p>
+  <a href="https://discord.gg/AZaq89VS" target="_blank" class="discord-button">Zum Discord</a>
 </footer>
 
 <script>
@@ -499,7 +516,6 @@
     });
   });
 
-  function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
-  }
+ 
+
 </script>
